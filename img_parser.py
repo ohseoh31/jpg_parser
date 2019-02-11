@@ -20,9 +20,6 @@ class JpegParser:
 
     def set_img_info(self):
 	
-
-
-	
         img_file_pointer = open(self.file_path,'rb')
         pointer = 0
         start_offset_2byte = img_file_pointer.read(2)
