@@ -3,34 +3,26 @@ import binascii
 import struct
 import marker_setting 
 
-#파일을 불러오는 함수 구현
-#TODO 마커 추적 
-#해당 마커부터 다음 2byte를 읽어 길이를 파악하고 해당 2byte부터 size 만큼 이동
-
-#FFD8 ~ FFD9
-
-
-#1. input 특정 폴더
-#2. 폴더내의 jpg 파일 읽기
-#3. 파일중 JPEG 파일 확인
-#4. output JPEG 파일
-
-'''
-	2. txt akzj, offset
-'''
-#4. endian
-
-
-
 class JpegParser:
 
     def __init__(self, file_path):
+	'''
+	    @param
+		file_path : parsed img path
+		parse_list : img marker info save
+		counter  : marker offset
+		flag : check last marker
+	'''
         self.file_path = file_path
         self.parse_list = []
         self.counter = 0
         self.flag = 1
 
     def set_img_info(self):
+	
+
+
+	
         img_file_pointer = open(self.file_path,'rb')
         pointer = 0
         start_offset_2byte = img_file_pointer.read(2)
